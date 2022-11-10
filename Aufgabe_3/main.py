@@ -33,40 +33,9 @@ character = {
     "y": y,
     "z": z,
     ".": point,
-    #"?": None,
-    #"!": None,
+    # "?": None,
+    # "!": None,
 }
-
-# character = {
-#     "a": printA,
-#     "b": printB,
-#     "c": printC,
-#     "d": printD,
-#     "e": printE,
-#     "f": printF,
-#     "g": printG,
-#     "i": printI,
-#     "j": printJ,
-#     "k": printK,
-#     "l": printL,
-#     "m": printM,
-#     "n": printN,
-#     "o": printO,
-#     "p": printP,
-#     "q": printQ,
-#     "r": printR,
-#     "s": printS,
-#     "t": printT,
-#     "u": printU,
-#     "v": printV,
-#     "w": printW,
-#     "x": printX,
-#     "y": printY,
-#     "z": printZ,
-#     ".": point,
-#     #"?": None,
-#     #"!": None,
-# }
 
 moveTurtle = {
     "W": forward,
@@ -77,11 +46,15 @@ moveTurtle = {
     "F": moveUp
 }
 
+
 def options_to_print():
     print("Enter 1 to write a letter ")
     print("Enter 2 in order to move your turtle ")
+
+
 def print_turtle_commands():
     moveTurtle.values()
+
 
 def writeTurtle():
     while True:
@@ -103,7 +76,7 @@ def writeTurtle():
                   "Press D to rotate right \n"
                   "Press G to put pen down \n"
                   "Press F to put pen up")
-            #print_turtle_commands()
+            # print_turtle_commands()
 
             f = open("Aufgabe_3/user_input.txt", "w")  # Save the user input into the text file
 
@@ -114,12 +87,9 @@ def writeTurtle():
                     f.write(str(moveTurtle[yOption](tur)))
                 else:
                     break
-
+            f.close()
 
         else:
             tur.clear()
             break
-#writeTurtle()
-
-
-
+# writeTurtle()

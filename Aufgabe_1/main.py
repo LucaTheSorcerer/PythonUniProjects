@@ -1,9 +1,10 @@
 import random
 from Aufgabe_1 import read_lines_test
 
-
 from Aufgabe_1.ascii_signs import *
+from Aufgabe_1.read_from_files.read_lines import *
 from enum import IntEnum
+
 
 def choices():
     """
@@ -14,10 +15,9 @@ def choices():
     print("3. Scissors")
 
 
-
 options = ("Rock", "Paper", "Scissors")  # This tuple stores all the options for the game
 
-results = {1: "You win!", 2: "Computer wins!", 3: "It's a tie!"} #This dictionary stores the all the possible outputs
+results = {1: "You win!", 2: "Computer wins!", 3: "It's a tie!"}  # This dictionary stores the all the possible outputs
 
 
 def logicGame(playerOption, computerOption):
@@ -43,8 +43,8 @@ def logicGame(playerOption, computerOption):
 
         case 3:
             if computerOption == 1:
-                return 1
-            return 3
+                return 2
+            return 1
 
 
 def playGame():
@@ -58,18 +58,21 @@ def playGame():
     pscore = 0
     gamen = 0
 
-    while gamen < 3: #While the number of games is <3 the game will keep going
+    while gamen < 3:  # While the number of games is <3 the game will keep going
         print(f"Your score is {pscore}")
         print(f"The computer's score is {cscore}")
         choices()
 
         playerOption = int(input("Your choice for the game ").strip())
         if playerOption == 1:
-            print_rock()
+            read_lines_for_rock()
+            # print_rock()
         elif playerOption == 2:
-            print_paper()
+            read_lines_for_paper()
+            # print_paper()
         elif playerOption == 3:
-            print_scissors()
+            read_lines_for_scissors()
+            # print_scissors()
 
         if playerOption not in range(1, 4):
             print("Invalid Option")
@@ -81,11 +84,12 @@ def playGame():
         computerOption = options.index(computerOption) + 1
 
         if computerOption == 1:
-            print_rock()
+            read_lines_for_rock()
+
         elif computerOption == 2:
-            print_paper()
+            read_lines_for_paper()
         elif computerOption == 3:
-            print_scissors()
+            read_lines_for_scissors()
 
         result = logicGame(playerOption, computerOption)
 
@@ -102,4 +106,4 @@ def playGame():
         print("The computer destroyed you. Press F to pay respects 💀")
     else:
         print("You defeated the machine! Well done, you stopped them from taking over! 🎉")
-#playGame()
+# playGame()

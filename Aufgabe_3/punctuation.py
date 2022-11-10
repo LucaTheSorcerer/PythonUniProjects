@@ -9,3 +9,9 @@ def point(tut):
     tut.left(90)
     tut.fd(10)
     tut.pd()
+
+def question_mark(tut):
+    pass
+
+def exclamation_mark(tut):
+    pass

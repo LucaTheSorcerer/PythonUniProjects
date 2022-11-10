@@ -35,6 +35,7 @@ def WordsChange(word, filename, replacementWord, listt):
 
     changeWordsInFile(filename, new_list)
 
+
 def changeWordsInFile(fileName, wordList):
     """
     It replaces the list of words after being replaced in the same file
@@ -49,8 +50,8 @@ def changeWordsInFile(fileName, wordList):
             f.write(word + " ")
         f.write("\n")
 
-def changeWords_to_call_WordsChange():
 
+def changeWords_to_call_WordsChange():
     f1 = "Aufgabe_2/aufgabe2.txt"
     """
     This calls the WordsChange function and it takes input as input the replaceable word and the word to replace 
@@ -59,7 +60,7 @@ def changeWords_to_call_WordsChange():
     fileText = []
 
     try:
-        fileText = FileExractor(f1) #If file does not exist then it outputs that file does not exist
+        fileText = FileExractor(f1)  # If file does not exist then it outputs that file does not exist
     except FileNotFoundError:
         print("File not found!")
         return
@@ -68,4 +69,4 @@ def changeWords_to_call_WordsChange():
     word_replacement = input("Enter the word used for replacement: ").strip()
 
     WordsChange(word, f1, word_replacement, fileText)
-#changeWords_to_call_WordsChange()
+# changeWords_to_call_WordsChange()

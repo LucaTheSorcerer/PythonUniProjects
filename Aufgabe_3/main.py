@@ -1,9 +1,7 @@
 import turtle
-
-from Aufgabe_3.alphabet import *
+from Aufgabe_3.letters.alphabet import *
 from Aufgabe_3.move import *
 from Aufgabe_3.punctuation import *
-from Aufgabe_3.alphabet2 import *
 
 tur = turtle.Turtle()
 
@@ -81,7 +79,7 @@ moveTurtle = {
 
 def options_to_print():
     print("Enter 1 to write a letter ")
-    print("Enter 2 to add a character to program ")
+    print("Enter 2 in order to move your turtle ")
 def print_turtle_commands():
     moveTurtle.values()
 
@@ -98,13 +96,25 @@ def writeTurtle():
                 continue
 
         elif option == "2":
-            print_turtle_commands()
+            print("Your options are: \n"
+                  "Press W to move forward 10 pixels \n"
+                  "Press S to move backwards 10 pixles \n"
+                  "Press A to rotate left \n"
+                  "Press D to rotate right \n"
+                  "Press G to put pen down \n"
+                  "Press F to put pen up")
+            #print_turtle_commands()
+
+            f = open("Aufgabe_3/user_input.txt", "w")  # Save the user input into the text file
+
             while True:
                 yOption = input("Your character ").strip()
-                if option in moveTurtle:
-                    moveTurtle[yOption]()
+                if yOption in moveTurtle:
+                    moveTurtle[yOption](tur)
+                    f.write(str(moveTurtle[yOption](tur)))
                 else:
                     break
+
 
         else:
             tur.clear()

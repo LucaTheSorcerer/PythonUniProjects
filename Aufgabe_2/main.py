@@ -51,7 +51,7 @@ def changeWordsInFile(fileName, wordList):
 
 def changeWords_to_call_WordsChange():
 
-    f1 = "aufgabe2.txt"
+    f1 = "Aufgabe_2/aufgabe2.txt"
     """
     This calls the WordsChange function and it takes input as input the replaceable word and the word to replace 
     it with

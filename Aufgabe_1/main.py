@@ -1,6 +1,8 @@
 import random
+from Aufgabe_1 import read_lines_test
 
-from Aufgabe_1 import *
+
+from Aufgabe_1.ascii_signs import *
 from enum import IntEnum
 
 def choices():
@@ -10,6 +12,7 @@ def choices():
     print("1. Rock")
     print("2. Paper")
     print("3. Scissors")
+
 
 
 options = ("Rock", "Paper", "Scissors")  # This tuple stores all the options for the game
@@ -61,6 +64,13 @@ def playGame():
         choices()
 
         playerOption = int(input("Your choice for the game ").strip())
+        if playerOption == 1:
+            print_rock()
+        elif playerOption == 2:
+            print_paper()
+        elif playerOption == 3:
+            print_scissors()
+
         if playerOption not in range(1, 4):
             print("Invalid Option")
             continue
@@ -69,6 +79,13 @@ def playGame():
         print(f"The computer chose {computerOption}")
 
         computerOption = options.index(computerOption) + 1
+
+        if computerOption == 1:
+            print_rock()
+        elif computerOption == 2:
+            print_paper()
+        elif computerOption == 3:
+            print_scissors()
 
         result = logicGame(playerOption, computerOption)
 
@@ -82,7 +99,7 @@ def playGame():
             gamen += 1
 
     if cscore > pscore:
-        print("The computer won!")
+        print("The computer destroyed you. Press F to pay respects 💀")
     else:
-        print("You defeated the machine!")
+        print("You defeated the machine! Well done, you stopped them from taking over! 🎉")
 #playGame()

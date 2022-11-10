@@ -1,12 +1,21 @@
-def check_sum_equal_number(number, list1):
-    """
-    This function checks if two consecutive numbers from the list are qual to the given number als paramter
-    :param number: this is the given number that we check the sum with
-    :param list1: this list contains all the numbers in our list
-    :return: return True if the sum of two consecutive numbers are equal to the given number, False otherwise
-    """
+a = "1234556544345"
+b = "2343234"
 
+def big_sum_different_numbers_length(string1, string2):
+    result = ""
+    fill = "0" * abs((len(string1) - len(string2)))
 
-number = int(input("Enter a number: "))
-list1 =list(map(int(input("Enter a list")).split()))
-print(list1)
+    if len(string1) > len(string2):
+        string2 = fill + string2
+    if len(string2) > len(string1):
+        string1 = fill + string1
+
+    for i in range(len(string1)-1, -1, -1):
+        cif = int(string1[i]) + int(string2[i])
+        carry = cif // 10
+        result = str(cif % 10 + carry) + result
+
+    if carry > 0:
+        result = str(carry) + result
+    return result
+print(big_sum_different_numbers_length(a, b))

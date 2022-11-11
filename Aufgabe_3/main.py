@@ -1,7 +1,7 @@
 import turtle
 from Aufgabe_3.letters.alphabet import *
-from Aufgabe_3.move import *
-from Aufgabe_3.punctuation import *
+from Aufgabe_3.move_turtle.move import *
+from Aufgabe_3.punctuation_signs.punctuation import *
 
 tur = turtle.Turtle()
 

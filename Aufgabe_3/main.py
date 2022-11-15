@@ -46,6 +46,15 @@ moveTurtle = {
     "F": moveUp
 }
 
+moveTurtleName = {
+    "W": "forward",
+    "S": "backwards",
+    "A": "rotateLeft",
+    "D": "rotateRight",
+    "G": "moveDown",
+    "F": "moveUp"
+}
+
 
 def options_to_print():
     print("Enter 1 to write a letter ")
@@ -84,7 +93,7 @@ def writeTurtle():
                 yOption = input("Your character ").strip()
                 if yOption in moveTurtle:
                     moveTurtle[yOption](tur)
-                    f.write(str(moveTurtle[yOption](tur)))
+                    f.write(str(moveTurtleName[yOption]))
                 else:
                     break
             f.close()
@@ -92,4 +101,4 @@ def writeTurtle():
         else:
             tur.clear()
             break
-# writeTurtle()
+writeTurtle()

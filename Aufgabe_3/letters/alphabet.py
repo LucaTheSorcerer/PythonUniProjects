@@ -17,28 +17,11 @@ def a(turt):
     turt.left(90)
     turt.fd(20)
     turt.pu()
-    # fixes
     turt.right(90)
     turt.fd(30)
     turt.right(90)
     turt.fd(30)
-    # turt.setheading(0)
-    # turt.pu()
-    # turt.left(90)
-    # turt.forward(100)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.left(180)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.left(90)
-    # turt.pu()
-    # tur.right(180)
+
 
 
 def b(turt):
@@ -66,22 +49,7 @@ def b(turt):
     turt.left(90)
     turt.fd(10)
     turt.right(90)
-    # turt.left(90)
-    # turt.forward(100)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.right(180)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.right(90)
-    # turt.forward(50)
-    # turt.left(180)
-    # turt.forward(50)
+
 
 
 def c(turt):

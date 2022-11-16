@@ -1,7 +1,7 @@
-def forward(tut):
+def moveForward(tut):
     tut.fd(10)
 
-def backwards(tut):
+def moveBackwards(tut):
     tut.bk(10)
 
 def rotateRight(tut):

@@ -1,5 +1,7 @@
-from Aufgabe_1.main import playGame
-from Aufgabe_2.main import changeWords_to_call_WordsChange
+#from Aufgabe_1.main import playGame
+from Aufgabe_1.play_game.play import playGame
+#from Aufgabe_2.main import changeWords_to_call_WordsChange
+from Aufgabe_2.changeWords_to_call_WordsChange.changeWords_to_call_WordsChange import *
 from Aufgabe_3.write_turtle import writeToTurtle
 """
 This file binds all the exercises together so that the user can call them directly from the terminal 

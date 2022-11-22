@@ -1,4 +1,5 @@
 from Aufgabe_3.data.data import *
+from Aufgabe_3.ui.ui import *
 
 
 def fillFileWordsList():
@@ -15,15 +16,25 @@ def fillFileWordsList():
     return fileWords
 
 
-def saveAdditionalChr(fileWords):
-    f = open("Aufgabe_3/user_input.txt")
+def saveAdditionalChr():
+    """
+    Saves the contents of AdditionalChr to the file
+    :return:
+    """
+    f = open("Aufgabe_3/user_input.txt", "w")
 
-    for word in fileWords:
-        if "+" not in fileWords:
-            f.write(word + "+" + "\n")
-        else:
-            f.write(word + "\n")
+    for key in additionalChr:
+        f.write(":" + key + ":" + "+" + "\n")
+        s = additionalChr[key]
+        s = s.strip()
+        s = s.split("+")
+
+        for word in s:
+            if word != "":
+                f.write(word + "+" + "\n")
+
     f.close()
+
 
 def characterCreation(tur, fileWords):
     """
@@ -41,6 +52,10 @@ def characterCreation(tur, fileWords):
         print("Invalid name! Character already exists")
         return
 
+    auxName = characterName.split(":")[1]
+    additionalChr[auxName] = ""
+    printUserOptions()
+
     fileWords.append(characterName)
 
     while True:
@@ -48,6 +63,7 @@ def characterCreation(tur, fileWords):
         if yOption in moveTrt:
             moveTrt[yOption](tur)
             fileWords.append(str(moveTurtleName[yOption]))
+            additionalChr[auxName] += str(moveTurtleName[yOption] + "+")
         else:
             break
 
@@ -66,13 +82,20 @@ def writeCharacter(tur, optionChr):
         tur.pu()
 
     if optionChr in additionalChr:
-        tur.od()
+        tur.pd()
         interpretListOfCharacters(additionalChr[optionChr], tur)
         tur.fd(30)
         tur.pu()
 
 
 def writeCharacterList(tur, st):
+    """
+    This function splits the given word into separate characters in order for the turtle to write
+    the characters
+    :param tur: the turtle
+    :param st: word entered by the user
+    :return: --
+    """
     newS = []
     s = ""
 
@@ -96,6 +119,7 @@ def interpretCharacter(s, tur):
     """
     This function transfroms the string characters into code by using a dictionary
     and executes the command
+    Interprets the command and executes it
     :param s: a string containing the command
     :param tur: turtle used to draw character
     :return:
@@ -106,7 +130,7 @@ def interpretCharacter(s, tur):
 
 def interpretListOfCharacters(l, tur):
     """
-    This function executed all the commands from the list
+    This function executes all the commands from the list
     :param l: list of commands as a single string of commands
     :param tur: the turtle
     :return:
@@ -118,8 +142,7 @@ def interpretListOfCharacters(l, tur):
 
 def interpretListfromFile():
     """
-    This function takes the commands as stringsfrom the user_input file and
-    stores them in the dictionary that contains user defined characters
+    This function interprets the contents of the given file and saves them in the additionalChr dictionary
     :return: --
     """
     s = ""

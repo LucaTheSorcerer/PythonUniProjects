@@ -2,6 +2,9 @@ from Aufgabe_3.letters.alphabet import *
 from Aufgabe_3.punctuation_signs.punctuation import *
 from Aufgabe_3.move_turtle.move import *
 
+"""
+This dictionary stores all the functions for the characters
+"""
 characterDict = {
     "a": a,
     "b": b,
@@ -34,6 +37,9 @@ characterDict = {
     "!": exclamation_mark
 }
 
+"""
+This  dictionary stores the new characters that are created by the user
+"""
 additionalChr = {}
 
 moveTrt = {
@@ -46,6 +52,9 @@ moveTrt = {
 }
 
 
+"""
+This is the string version of the dictionary moveTrt
+"""
 moveTurtleName = {
     "W": "forward",
     "S": "backwards",
@@ -55,6 +64,10 @@ moveTurtleName = {
     "F": "moveUp"
 }
 
+"""
+This dictionary creates a link between what it needs to be executed and what is being
+read from the file
+"""
 moveTrtInterpretation = {
     "forward":moveForward,
     "backwards":moveBackwards,

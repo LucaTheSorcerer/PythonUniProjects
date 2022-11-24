@@ -41,3 +41,79 @@ def main():
     print(stats.anzahl_auto_farbe('blue'))
     print(stats.avg_baujahr(2010))
 main()
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+class Circle:
+
+    def __init__(self, r, c):
+        self.r = r #Number
+        self.c = c #point
+
+    def print(self):
+        print(f'radius: {self.r}, center: {(self.c.x, self.c.y)}')
+
+    def move(self, dx, dy):
+        self.c = Point(self.c.x + dx, self.c.y + dy)
+
+        # self.c.x += dx
+        # self.c.y += dy
+
+    def resize(self, k):
+        self.r *= k
+
+    def area(self):
+        from math import pi
+        return pi*self.r**2
+
+
+class Circle2:
+
+    def __init__(self, r, x, y):
+        self.r = r  # Number
+        self.c = Point(x, y)  # point
+
+    def print(self):
+        print(f'radius: {self.r}, center: {(self.c.x, self.c.y)}')
+
+    def move(self, dx, dy):
+        self.c = Point(self.c.x + dx, self.c.y + dy)
+
+        # self.c.x += dx
+        # self.c.y += dy
+
+    def resize(self, k):
+        self.r *= k
+
+    def area(self):
+        from math import pi
+        return pi * self.r ** 2
+
+class Student:
+    def __init__(self, name, age = 0):
+        self.name = name
+        self.age = age
+
+
+def main():
+    bob = Student("bob", 20)
+    dob = Student("dob")
+
+    print(bob.age, bob.name)
+    print(dob.age, dob.name)
+    c = Circle(10, Point(1,2))
+    p = Point(1, 2)
+    c1 = Circle(10, p)
+    c.print()
+
+    c2 = Circle2(10, 1, 2)
+
+    c.move(10, 20)
+    c.print()
+    c.resize(5)
+    c.print()
+    print(c.area())
+main()

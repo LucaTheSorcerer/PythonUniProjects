@@ -5,7 +5,7 @@ def FileExractor(filename):
     :return:
     """
     l = []
-    with open(filename) as f:
+    with (open(filename) as f):
         for line in f:
             l.append(line.strip())
 

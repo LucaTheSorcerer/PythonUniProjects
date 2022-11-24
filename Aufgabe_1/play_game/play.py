@@ -1,8 +1,14 @@
+from playsound import playsound
+import PyObjCTools
+import cv2
+import numpy as np
 import random
 from Aufgabe_1.read_from_files.read_lines import *
 from Aufgabe_1.game_logic.logic import *
 from Aufgabe_1.data.data import *
 
+def play_videoFile(filePath, mirror=False):
+    cap = cv2.VideoCapture("Aufgabe_1/YOU_DIED.mp4")
 def playGame():
     """
     This function contains the code for taking input and output and then playing the game, at the end
@@ -67,3 +73,4 @@ def playGame():
         print("The computer destroyed you. Press F to pay respects 💀")
     else:
         print("You defeated the machine! Well done, you stopped them from taking over! 🎉")
+        playsound("Aufgabe_1/mlg.mp3")

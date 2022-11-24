@@ -11,7 +11,7 @@ def read_lines_for_rock():
                 print(l_num)
 
 
-read_lines_for_rock()
+#read_lines_for_rock()
 
 
 def read_lines_for_paper():
@@ -26,7 +26,7 @@ def read_lines_for_paper():
                 print(l_num)
 
 
-read_lines_for_paper()
+#read_lines_for_paper()
 
 
 def read_lines_for_scissors():
@@ -41,4 +41,4 @@ def read_lines_for_scissors():
                 print(l_num)
 
 
-read_lines_for_scissors()
+#read_lines_for_scissors()

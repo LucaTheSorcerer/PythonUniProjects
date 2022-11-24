@@ -9,5 +9,5 @@ def changeWordsInFile(fileName, wordList):
 
     for line in wordList:
         for word in line:
-            f.write(word + " ")
+            f.write(word)
         f.write("\n")

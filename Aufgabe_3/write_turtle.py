@@ -1,6 +1,7 @@
 import turtle
 from Aufgabe_3.program_logic.logic import *
 from Aufgabe_3.ui.ui import *
+from playsound import playsound
 
 tur = turtle.Turtle()
 
@@ -16,6 +17,7 @@ def writeToTurtle():
         if option == "1":
             optionChr = input("Enter a word ").strip()
             writeCharacterList(tur, optionChr)
+            playsound("Aufgabe_3/omg.mp3")
 
         elif option == "2":
             characterCreation(tur, fileWords)

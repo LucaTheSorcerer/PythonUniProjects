@@ -2,13 +2,31 @@ from playsound import playsound
 import PyObjCTools
 import cv2
 import numpy as np
+import subprocess
+import threading
 import random
 from Aufgabe_1.read_from_files.read_lines import *
 from Aufgabe_1.game_logic.logic import *
 from Aufgabe_1.data.data import *
 
-def play_videoFile(filePath, mirror=False):
-    cap = cv2.VideoCapture("Aufgabe_1/YOU_DIED.mp4")
+# def play_videoFile():
+#     cap = cv2.VideoCapture("Aufgabe_1/YOU_DIED.mp4")
+#     ret, frame = cap.read()
+#     if (cap.isOpened() == False):
+#         print("Error opening file")
+#     while(cap.isOpened()):
+#         ret, frame = cap.read()
+#         if ret == True:
+#             cv2.imshow('Frame', frame)
+#
+#             if cv2.waitKey(25) & 0xFF == ord('q'):
+#                 break
+#         else:
+#             break
+#     cap.release()
+#     cv2.destroyAllWindows()
+#
+# play_videoFile()
 def playGame():
     """
     This function contains the code for taking input and output and then playing the game, at the end
@@ -42,6 +60,7 @@ def playGame():
 
         if playerOption not in range(1, 4):
             print("Invalid Option")
+            playsound("Aufgabe_1/bruh2.mp3")
             continue
 
 
@@ -71,6 +90,10 @@ def playGame():
 
     if cscore > pscore:
         print("The computer destroyed you. Press F to pay respects 💀")
+        playsound("Aufgabe_1/lost.mp3")
+        playsound("Aufgabe_1/stupid.mp3")
     else:
         print("You defeated the machine! Well done, you stopped them from taking over! 🎉")
         playsound("Aufgabe_1/mlg.mp3")
+        playsound("Aufgabe_1/siu.mp3")
+

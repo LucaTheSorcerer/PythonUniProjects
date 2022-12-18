@@ -1,0 +1,116 @@
+FOOD ORDERING SYSTEM
+
+MAIN PARTS:
+
+A.
+-register a new order
+- information about the customer:
+    1. Name
+    2. Address
+-the items of the order
+-total price of the order
+-the date of the delivery
+-time of the order's registration
+
+B.
+-at the registration of a new order, the personnel has to be able to:
+    1. select dishes from the menu
+    2. add new information about a client by searching or creating a new client
+        -the search for a client has to be based on a part of its name or address
+        -there is not distinction between lowercase and uppercase letter
+        -example:
+            the client with the name "Max Mustermann" and address "Frankfurterstr" could be found by searching "muster"
+            or "frankfurt"
+        -two or more clients can have the same name or address
+
+C.
+-The menu doesn't have to necessarily have a search function
+-It is enough when the dishes are listed in the menu and the personnel is asked to pick the desired ones
+
+D.
+-The personnel needs to have the ability to manage the menu and clients
+-The app needs to have the following functionalities for the dishes and clients:
+    1. ADD
+    2. VIEW
+    3. UPDATE
+    4. DELETE DISHES/ EXISTING CLIENTS
+
+
+==============================================================================================================
+
+THE MODELS/CLASSES TO BE IMPLEMENTED ARE:
+    1. Identifizierbar (nicht zur Instanziierung gedacht)
+        -Attribute: ID
+
+    2. Gericht/ Dishes (erbt von Identifiable/ soll nicht instanziert werden)
+        -Attribute: Portionsgrosse (350g), Preis/Price
+
+    3. GekochterGericht(erbt Gericht)
+        -Attribute: Zubereitungszeit/Time for preparation
+
+    4. Getrank(erbt Gericht)
+        -Attribute: Alkoholgehalt/ how much alcohol is has
+
+    5. Kunde(erbt Identifizerbar)
+        -Attribute: Name/Name, Adresse/Address
+
+    6. Bestellung/Order(erbt Identifizerbar)
+        -Attribute: Kunden-ID / Client-ID, Liste der IDs fur Gerichte und Getranke/ List
+        of IDs of Dishes and Drinks, Gesamtkosten/ Total price
+
+METHODS INSIDE OF CLASSES:
+    1. offentliche Methode zur Berechnung der Kosten/ PUBLIC METHOD TO CALCULATE THE TOTAL COST
+        -THE REDUCE FUNCTION MUST BE USED
+    2. private Methode zur Erzeugung eines Strings, der die Rechnung darstellt/ PRIVATE METHOD THAT CREATES A STRING
+       WHICH REPRESENT THE BILL OF THE ORDER
+       -MAP FUNCTION HAS TO BE USED
+    3. öffentliche Methode zur Anzeige des Schecks (sie verwendet die private Methode zur Erzeugung der Rechnung)/
+       PUBLIC METHOD TO OUTPUT THE CHECK (uses the private that generates the bill)
+
+
+==============================================================================================================
+
+The REPOSITORY is responsible for the management of data
+All the app's data have to be saved and read from files
+The repository should accept the following formats: JSON, CSV, PICKLE
+Use the following class structure to implement the storing of files:
+
+    DataFormatter(soll nicht instanziert werden):
+        - Attribute: Datei/File
+
+        Methode/ Methods:
+        1. Save (save a list of objects in a file)
+        2. Load (Reads a list of objects from a file)
+        3. Read File (Reads the contents of a file and outputs it)
+        4. Write to File (Writes a string in the File and overwrites the File)
+        5. Convert to String (recevies as argument a list of objects that have to be converted to a string and then saved
+                             in the File)
+        6. Convert from String (receives as argument a string and converts it ti a list of objects read from File.
+                                Does not have to be implemented, just defined)
+
+
+
+The following CLASSES INHERIT from DataFormatter and implement the methods convert from/to string:
+    -CookedDishFormatter
+    -DrinkFormatter
+    -CustomerFormatter
+    -OrderFormatter
+
+The following classes need to utilize the MAP FUNCTION as part of the implementation
+
+
+==============================================================================================================
+
+The following functionalities have to be TESTED:
+    -ADD A DISH
+    -SEARCH AFTER A CLIENT BASED ON A PART OF HIS NAME
+    -SEARCH AFTER A CLIENT BASED ON A PART OF HIS ADDRESS
+    -UPDATE THE NAME OF A CLIENT
+    -GENERATE THE STRING THAT REPRESENTS THE BILL
+    -CONVERSION AND SAVING OF AN ORDER IN THE DATA FILE
+    -READ AND CONVERSION OF AN ORDER FROM A FILE
+
+ALL SEARCHES AND DELETIONS HAVE TO USE THE FILTER FUNCTION AS PART OF THEIR IMPLEMENTATION
+
+EVERYTHING HAS TO BE IMPLEMENTED AS A TERMINAL APP
+

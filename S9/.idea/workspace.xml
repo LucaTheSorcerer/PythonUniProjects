@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5db24f23-a45e-4783-aa3c-0fa68e849b15" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Aufgabe_2/ayo.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/controller/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/controller/controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/bestellung.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/gekochterGericht.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/gericht.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/getrank.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/identifizierbar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/kunde.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/modelle/modelle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/repository/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/repository/listDrink.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/repository/listFood.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/tests/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/todo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/ui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../L5/ui/ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../S8/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../S8/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../S8/Aufgabe1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../S8/Aufgabe_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../S8/kurs8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../S8/rooms.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Aufgabe_2/aufgabe2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Aufgabe_2/aufgabe2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Aufgabe_2/change_words/words_change.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Aufgabe_2/change_words/words_change.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Aufgabe_3/user_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Aufgabe_3/user_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../challenge/reverse_string_file/challenge.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../challenge/reverse_string_file/challenge.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2IwF1CLvjjW999FxtOz4uHpJDHy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="S9" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5db24f23-a45e-4783-aa3c-0fa68e849b15" name="Changes" comment="" />
+      <created>1671084521801</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671084521801</updated>
+      <workItem from="1671084523608" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

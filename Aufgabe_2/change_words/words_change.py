@@ -1,4 +1,5 @@
 from Aufgabe_2.changeWordsInFile.changeWordsInFile import *
+from playsound import playsound
 # def WordsChange(word, filename, replacementWord, listt):
 #     """
 #     It changes all the occurences of a word with the desired given word and keeps a counter of the appearences
@@ -39,6 +40,6 @@ def WordsChange2(wordToReplace, filename, replaceWord, lst):
             wordAp += 2
 
     print(f"The word appears {wordAp} times")
-
+    playsound("Aufgabe_2/ayo.mp3")
     changeWordsInFile(filename, lst)
 

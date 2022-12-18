@@ -22,6 +22,10 @@ def printOptions():
     print("If the input is an invalid input, the program will stop! ")
 
 def run_program():
+    """
+    This function gives the opportunity to the user to chose from the 3 different programs
+    :return:
+    """
     print(figlet_format("Welcome to the game", font = "standard"))
     print(" ___\n"
           "|[_]|\n"

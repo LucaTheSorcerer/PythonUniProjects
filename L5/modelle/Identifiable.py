@@ -1,12 +1,12 @@
 class Identifiable:
-
-    def __int__(self, id_):
-        self.__id = id_
-
+    __id_counter = 0
+    def __int__(self):
+        self.__id = self.__class__.__id_counter
+        self.__class__.__id_counter += 1
     @property
     def id(self):
         return self.__id
 
     @id.setter
-    def id(self, id_):
-        self.__id = id_
+    def id(self, id):
+        self.__id = id

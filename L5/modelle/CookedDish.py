@@ -24,5 +24,5 @@ class CookedDish(Dish):
 
     #Setter for preparation_time
     @preparation_time.setter
-    def preparatio_time(self, preparation_time):
+    def preparation_time(self, preparation_time):
         self.__preparation_time = preparation_time

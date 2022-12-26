@@ -4,10 +4,10 @@ class Customer(Identifiable):
     def __init__(self, name: str, adresse: str):
         if type(name) != str or type(adresse) != str:
             raise AttributeError
-
         super().__int__()
-        self.__adresse = adresse
-        self.__name = name
+        self.name = name
+        self.adresse = adresse
+
 
 
         @property
@@ -31,3 +31,5 @@ class Customer(Identifiable):
                 raise AttributeError
 
             self.__name = x
+
+

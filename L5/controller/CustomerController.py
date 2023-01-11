@@ -1,6 +1,8 @@
-from L5.repository import DataRepo
+from L5.repository.DataRepo import DataRepo
+from L5.repository.DataRepo import ResultCheck
 from L5.repository.CustomerRepo import CustomerRepo
 from L5.modelle.Customer import Customer
+from L5.
 from L5.ui.ui1 import *
 class CustomerController:
     def __init__(self, customerRepo):
@@ -8,8 +10,36 @@ class CustomerController:
 
 
     def menu(self):
-        pass
+        option = menu("Manage customer", ["Show all customers", "Add a new customer", "Update customer",
+                                          "Remove a customer", "Find a customer", "Return to the previous menu"])
 
+        if not option.isnumeric():
+            invalid_message_to_display()
+            self.menu()
+
+        option = int(option)
+
+        match option:
+            case 1:
+                self.__show_all_customers()
+                self.menu()
+            case 2:
+                self.__add_customer()
+                self.menu()
+            case 3:
+                self.__update_customer()
+                self.menu()
+            case 4:
+                self.__remove_customer()
+                self.menu()
+            case 5:
+                self.__search_customer()
+                self.menu()
+            case 6:
+                pass
+            case other:
+                invalid_message_to_display()
+                self.menu()
     def __show_all_customers(self):
         """
         Method for printing all customers
@@ -49,16 +79,70 @@ class CustomerController:
             self.__update_customer()
 
         option = int(option)
-        customers_list = []
+        customers = []
 
         match option:
             case 1:
-                customers_list = self.__customerRepo.load()
+                customers = self.__customerRepo.get_all()
             case 2:
                 option = menu("Search for customer by", ["Name", "Addresse"])
                 if not option.isnumeric():
-                    pass
+                    invalid_message_to_display()
+                    self.menu()
 
+                option = int(option)
+                customer = Customer()
+
+                match option:
+                    case 1:
+                        name = input("Enter the Name of the customer: ")
+                        customer.name = name
+                    case 2:
+                        address = input("Enter the Address of the customer: ")
+                        customer.adresse = address
+                    case _:
+                        invalid_message_to_display()
+                        self.__update_customer()
+
+                customers = self.__customerRepo.search(customer)
+            case _:
+                invalid_message_to_display()
+                self.__update_customer()
+
+        option = menu("Choose a customer", customers, "=")
+        if not option.isnumeric():
+            invalid_message_to_display()
+            self.__update_customer()
+
+        option = int(option)
+
+        if option not in range(1, len(customers) + 1):
+            invalid_message_to_display()
+            self.__update_customer()
+
+        cust = customers[option-1]
+        print(f"The chosen customer is {cust}")
+
+        print("Updated customer's information")
+
+        name = input("Enter a new name for the cusomer: ")
+        address = input("Enter a new address for the customer: ")
+
+        updated_customer = Customer()
+
+        if name != '':
+            updated_customer.name = name
+        if address != '':
+            updated_customer.adresse = address
+
+        result = self.__customerRepo.update(updated_customer) #Implement update function
+
+        if result == ResultCheck.SUCCES:
+            print(f"The customer {cust} has been updated to {updated_customer}")
+        elif result == ResultCheck.NOT_FOUND:
+            print(f"The customer {cust} has not been found!")
+
+        print("=" * 10 + "Update Customer Information" + "=" * 10)
     def __remove_customer(self):
         """
         Method used to remove customer
@@ -72,11 +156,11 @@ class CustomerController:
             self.__remove_customer()
 
         option = int(option)
-        customers_list = []
+        customers = []
 
         match option:
             case 1:
-                customers_list = self.__customerRepo.load()
+                customers = self.__customerRepo.load()
             case 2:
                 """
                 Search customers in database
@@ -97,29 +181,28 @@ class CustomerController:
                     case other:
                         invalid_message_to_display()
                         self.__remove_customer()
-                customer = self.__customerRepo.search(customer) #Implement search function in customer
-            case other:
+                customers = self.__customerRepo.search(customer) #Implement search function in customer
+            case _:
                 invalid_message_to_display()
                 self.__remove_customer()
 
-        option = menu("Choose customer", customers_list)
+        option = menu("Choose customer", customers)
         if not option.isnumeric():
             invalid_message_to_display()
             self.__remove_customer()
 
         option = int(option)
 
-        if option not in range(1, len(customers_list)): #`Poate trebuie + 1:
+        if option not in range(1, len(customers)): #`Poate trebuie + 1:
             invalid_message_to_display()
             self.__remove_customer()
 
-        c = customers_list[option-1]
+        c = customers[option-1]
         result = self.__customerRepo.remove(c) #Implement remove customer in customerRepo
         if result == DataRepo.ResultCheck.SUCCESS:
             print(f"The customer {c} was deleted")
         elif result == DataRepo.ResultCheck.NOT_FOUND:
             print(f"The customer {c} does not exist")
-
 
         print("Customer deleted by index")
         self.menu()

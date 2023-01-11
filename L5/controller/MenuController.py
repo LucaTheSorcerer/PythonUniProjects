@@ -187,9 +187,50 @@ class MenuController:
         elif result == ResultCheck.NOT_FOUND:
             print(f"The dish - {dish} - has not been found!")
     def __update_drink(self):
-        pass
+        drinks = self.__drink_repo.get_all() #Implement get_all function
+        option = menu("Update a drink", drinks, "=")
 
+        if not option.isnumeric():
+            invalid_message_to_display()
+            self.__update_drink()
 
+        option = int(option)
+
+        if option not in range(1, len(drinks) + 1):
+            invalid_message_to_display()
+            self.__update_drink()
+
+        drink = drinks[option-1]
+        print(f"The chosen drink to be updated is: {drink}")
+
+        print("=" * 10 + "Updated Drink's Information" + "=" * 10)
+        name = input("Enter a new name for the drink")
+        portion_size = input("Enter a new size for the portion")
+        price = int(input("Enter a new price for the drink"))
+        alcohol_content = input("Enter a new alcohol content")
+
+        updated_drink = Drink(id_=0)
+
+        if name != '':
+            updated_drink.name = name
+
+        if portion_size != '':
+            updated_drink.portion_size = int(portion_size)
+
+        if price != '':
+            updated_drink.price = int(price)
+
+        if alcohol_content != '':
+            updated_drink.alcohol_content = int(alcohol_content)
+
+        result = self.__drink_repo.add(drink, updated_drink)
+
+        if result == ResultCheck.SUCCES:
+            print(f"The drink - {drink} - has been updated to the drink - {updated_drink} -")
+        elif result == ResultCheck.NOT_FOUND:
+            print(f"The drink - {drink} - has not been found!")
+
+        print("")
     def __remove_item(self):
         """
         This function is used to remove an item from the data base

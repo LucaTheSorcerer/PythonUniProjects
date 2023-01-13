@@ -1,0 +1,2 @@
+1,Pizza,450,12,25
+1,Ciorba de burta,350,24,45

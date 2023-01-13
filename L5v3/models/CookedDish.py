@@ -1,4 +1,4 @@
-from models.Dish import Dish
+from L5v3.models.Dish import Dish
 
 
 class CookedDish(Dish):
@@ -11,4 +11,4 @@ class CookedDish(Dish):
         return super().__eq__(other) and self.prep_time == other.prep_time
 
     def __str__(self):
-        return super().__str__() + f", preparation Time: {self.prep_time}"
+        return super().__str__() + f", Preparation Time: {self.prep_time}"

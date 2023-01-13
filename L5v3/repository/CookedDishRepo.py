@@ -1,7 +1,7 @@
 from functools import reduce
 
-from models.CookedDish import CookedDish
-from repository.DataRepo import DataRepo
+from L5v3.models.CookedDish import CookedDish
+from L5v3.repository.DataRepo import DataRepo
 
 
 class CookedDishRepo(DataRepo):
@@ -19,8 +19,8 @@ class CookedDishRepo(DataRepo):
 
     def convert_from_string(self, string: str):
         """
-        :param string: The representation of a list of dishes as a string
-        :return: The string in the form of a list
+        :param string: a list of dishes as a string
+        :return: string converted in the form of a list
         """
         if string == "":
             return []

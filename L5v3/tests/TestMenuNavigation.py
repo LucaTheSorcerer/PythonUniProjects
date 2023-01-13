@@ -1,8 +1,8 @@
-from controller.MenuNavigation import main_menu
-from repository.CookedDishRepo import CookedDishRepo
-from repository.CustomerRepo import CustomerRepo
-from repository.DrinkRepo import DrinkRepo
-from repository.OrderRepo import OrderRepo
+from L5v3.controller.MenuNavigation import main_menu
+from L5v3.repository.CookedDishRepo import CookedDishRepo
+from L5v3.repository.CustomerRepo import CustomerRepo
+from L5v3.repository.DrinkRepo import DrinkRepo
+from L5v3.repository.OrderRepo import OrderRepo
 
 customer_repo = CustomerRepo("customers.txt")
 dish_repo = CookedDishRepo("dishes.txt")

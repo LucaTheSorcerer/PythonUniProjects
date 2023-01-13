@@ -1,4 +1,4 @@
-from models.Dish import Dish
+from L5v3.models.Dish import Dish
 
 
 class Drink(Dish):
@@ -11,4 +11,4 @@ class Drink(Dish):
         return super().__eq__(other) and self.alcohol == other.alcohol
 
     def __str__(self):
-        return super().__str__() + f", alcohol Content:{self.alcohol}"
+        return super().__str__() + f", Alcohol Content:{self.alcohol}"

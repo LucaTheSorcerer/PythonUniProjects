@@ -1,23 +1,23 @@
-from controller.CustomerController import search_customer
-from models.Customer import Customer
-from models.Dish import Dish
-from models.Drink import Drink
-from models.Order import Order
+from L5v3.controller.CustomerController import search_customer
+from L5v3.models.Customer import Customer
+from L5v3.models.Dish import Dish
+from L5v3.models.Drink import Drink
+from L5v3.models.Order import Order
 
 
 def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], customers: list[Customer]):
     """
-    :param orders: A list of all orders
-    :param dishes: A list of all dishes
-    :param drinks: A list of all drinks
-    :param customers: A list of all customers
-    This function handles everything there is about orders
+    This function manages everything about orders
+    :param orders: A list with all the orders
+    :param dishes: A list with all the dishes
+    :param drinks: A list with all the drinks
+    :param customers: A list with all the customers
     """
 
     customer = search_customer(customers)
 
     if customer is None:
-        print("Try adding the customer in the list")
+        print("Add your customer to the list, first")
         return
 
     dish_IDs = []
@@ -37,11 +37,9 @@ def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], cust
                 print(f"Index: {i}, Dish: {str(dishes[i])}")
 
             try:
-                """
-                I know this is stupid but i am tired
-                """
 
-                option = int(input("Choose the index of the drink you want to update "))
+
+                option = int(input("Choose the index of your desired drink that you want to update "))
 
                 if option not in range(len(dishes)):
                     continue
@@ -54,11 +52,9 @@ def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], cust
                 print(f"Index: {i}, Drink: {str(drinks[i])}")
 
             try:
-                """
-                I know this is stupid but i am tired
-                """
 
-                option = int(input("Choose the index of the drink you want to update "))
+
+                option = int(input("Choose the index of your desired drink that you want to update "))
 
                 if option not in range(len(drinks)):
                     continue
@@ -82,4 +78,4 @@ def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], cust
     print(order)
 
     order.show_bill(dishes, drinks)
-    print(f"Estimated wait Time for the order {order.generate_estimated_wait_time(dishes)}")
+    print(f"The estimated time for your order is: {order.generate_estimated_wait_time(dishes)}")

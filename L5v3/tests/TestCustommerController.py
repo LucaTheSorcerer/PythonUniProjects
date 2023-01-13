@@ -1,11 +1,11 @@
-from controller.CustomerController import add_new_customer, search_customer_by_address, search_customer_by_name, \
+from L5v3.controller.CustomerController import add_new_customer, search_customer_by_address, search_customer_by_name, \
     update_customer, remove_customer
-from models.Customer import Customer
-from repository.CustomerRepo import CustomerRepo
+from L5v3.models.Customer import Customer
+from L5v3.repository.CustomerRepo import CustomerRepo
 
 """
-Here we test searching for a customer by name or address and changing the name of a customer
-Thus here we test the functionalities of the CustomerRepo class
+Tests the search of a customer by name or address and the changeability of its name
+Tests the functionalities of the CustomerRepo class
 """
 
 customer1 = Customer(0, "Mihai", "Str. Ciocarliei nr. 19")

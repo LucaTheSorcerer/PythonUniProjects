@@ -1,7 +1,7 @@
 from functools import reduce
 
-from models.Order import Order
-from repository.DataRepo import DataRepo
+from L5v3.models.Order import Order
+from L5v3.repository.DataRepo import DataRepo
 
 
 class OrderRepo(DataRepo):
@@ -20,8 +20,8 @@ class OrderRepo(DataRepo):
 
     def convert_from_string(self, string):
         """
-        :param string: The representation of a list of orders as a string
-        :return: The string in the form of a list
+        :param string: a list of orders as a string
+        :return: string converted in the form of a list
         """
         if string == "":
             return []

@@ -1,12 +1,12 @@
-from controller.MenuNavigation import main_menu
-from models.CookedDish import CookedDish
-from models.Customer import Customer
-from models.Drink import Drink
-from models.Order import Order
-from repository.CookedDishRepo import CookedDishRepo
-from repository.CustomerRepo import CustomerRepo
-from repository.DrinkRepo import DrinkRepo
-from repository.OrderRepo import OrderRepo
+from L5v3.controller.MenuNavigation import main_menu
+from L5v3.models.CookedDish import CookedDish
+from L5v3.models.Customer import Customer
+from L5v3.models.Drink import Drink
+from L5v3.models.Order import Order
+from L5v3.repository.CookedDishRepo import CookedDishRepo
+from L5v3.repository.CustomerRepo import CustomerRepo
+from L5v3.repository.DrinkRepo import DrinkRepo
+from L5v3.repository.OrderRepo import OrderRepo
 
 customer_repo = CustomerRepo("repository/DataBase/customers.txt")
 dish_repo = CookedDishRepo("repository/DataBase/dishes.txt")
@@ -29,7 +29,7 @@ drinks_repo.save([drink])
 order_repo.save([order])
 
 """
-We initialise the files with data
+The files are initialised with the data
 """
 
 main_menu(customerRepo=customer_repo, cookedDishRepo=dish_repo, drinkRepo=drinks_repo, orderRepo=order_repo)

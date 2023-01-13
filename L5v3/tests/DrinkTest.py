@@ -1,8 +1,8 @@
-from models.Drink import Drink
-from repository.DrinkRepo import DrinkRepo
+from L5v3.models.Drink import Drink
+from L5v3.repository.DrinkRepo import DrinkRepo
 
 """
-Here we test the functionalities of the DrinkRepo class
+Tests the functionalities of the DrinkRepo class
 """
 
 

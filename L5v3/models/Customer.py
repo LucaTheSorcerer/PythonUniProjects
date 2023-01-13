@@ -1,4 +1,4 @@
-from models.Identifiable import Identifiable
+from L5v3.models.Identifiable import Identifiable
 
 
 class Customer(Identifiable):

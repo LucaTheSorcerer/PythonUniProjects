@@ -1,14 +1,13 @@
-from models.CookedDish import CookedDish
-from models.Customer import Customer
-from models.Order import Order
-from repository.CookedDishRepo import CookedDishRepo
-from repository.CustomerRepo import CustomerRepo
-from repository.DrinkRepo import DrinkRepo
-from repository.OrderRepo import OrderRepo
+from L5v3.models.CookedDish import CookedDish
+from L5v3.models.Customer import Customer
+from L5v3.models.Order import Order
+from L5v3.repository.CookedDishRepo import CookedDishRepo
+from L5v3.repository.CustomerRepo import CustomerRepo
+from L5v3.repository.DrinkRepo import DrinkRepo
+from L5v3.repository.OrderRepo import OrderRepo
 
 """
-In this folder we test the functionalities of the Order class and the functionalities
-of the OrderRepo class
+Tests the functionality of the Order class and the OrderRepo class
 """
 
 customer_repo = CustomerRepo("customers.txt")

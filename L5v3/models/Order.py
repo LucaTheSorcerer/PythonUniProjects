@@ -2,7 +2,7 @@ import functools
 from datetime import datetime
 from functools import reduce
 
-from models.Identifiable import Identifiable
+from L5v3.models.Identifiable import Identifiable
 
 
 class Order(Identifiable):
@@ -21,13 +21,13 @@ class Order(Identifiable):
 
     def __str__(self):
         return f"Customer Id: {self.customer_id}, Dish Ids: {self.dish_ids}, " \
-               f" Drinks Ids: {self.drinks_ids}, costs: {self.costs}, Order Time: {self.time_stamp}"
+               f" Drinks Ids: {self.drinks_ids}, Costs: {self.costs}, Order Time: {self.time_stamp}"
 
     def __get_items(self, dishes, drinks):
         """
-        :param dishes: A list of all dishes in the menu
-        :param drinks: A list of all drinks in the menu
-        :return: A list build from the union of all drinks and dishes that appear in the menu, but also in this order
+        :param dishes: A list with all the dishes from the menu
+        :param drinks: A list with all the drinks from the menu
+        :return: A list made of the list of dishes and drinks in the menu
         """
         dish_list = list(filter(lambda dish: dish.id in self.dish_ids, dishes))
         drink_list = list(filter(lambda drink: drink.id in self.drinks_ids, drinks))
@@ -35,9 +35,9 @@ class Order(Identifiable):
 
     def generate_costs(self, dishes, drinks):
         """
-        :param dishes: A list of all dishes in the menu
-        :param drinks: A list of all drinks in the menu
-        :return: The total cost of the ordered items
+        :param dishes: A list with all the dishes from the menu
+        :param drinks: A list with all drinks from the menu
+        :return: The total cost of the items from the order combined
         """
         items_list = self.__get_items(dishes, drinks)
         costs = functools.reduce(lambda s, item: s + item.price, items_list, 0)
@@ -46,8 +46,8 @@ class Order(Identifiable):
     def generate_bill(self, dishes, drinks):
         """
         Generates the bill using the dishes and drinks that the customer ordered
-        :param dishes: A list of all dished in the menu
-        :param drinks: A list of all drinks in the menu
+        :param dishes: A list with all the dishes from the menu
+        :param drinks: A list with all the drinks from the menu
         :return: The bill of this order as a string with end-lines separating each item in the order
         At the end of the order the total cost of the bill appears
         """
@@ -68,7 +68,7 @@ class Order(Identifiable):
 
     def __generate_estimated_time_for_preparation(self, dishes):
         """"
-        Used for calculating the estimated wait Time
+        This function computes the estimated preparation Time for the dish
         """
         dish_list = list(filter(lambda dish: dish.id in self.dish_ids, dishes))
         wait_time = sum(d.prep_time for d in dish_list)
@@ -78,7 +78,7 @@ class Order(Identifiable):
 
     def __generate_estimated_time_for_finishing_the_order(self, dishes):
         """"
-        Used for calculating the estimated wait Time
+        This function computes the estimated time for finishing the order
         """
         time = self.time_stamp.split(":")
         preparation_time = self.__generate_estimated_time_for_preparation(dishes)
@@ -88,7 +88,7 @@ class Order(Identifiable):
 
     def generate_estimated_wait_time(self, dishes):
         """
-        :param dishes: A list of all dishes in the menu
+        :param dishes: A list with all the dishes from the menu
         :return: The estimated time required for finishing the order as a string
         The format is [hours : minutes]
         """

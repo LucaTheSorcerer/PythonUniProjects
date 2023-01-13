@@ -1,10 +1,10 @@
-from models.CookedDish import CookedDish
-from repository.CookedDishRepo import CookedDishRepo
-from repository.DrinkRepo import DrinkRepo
-from ui.RestaurantMenu import RestaurantMenu
+from L5v3.models.CookedDish import CookedDish
+from L5v3.repository.CookedDishRepo import CookedDishRepo
+from L5v3.repository.DrinkRepo import DrinkRepo
+from L5v3.ui.RestaurantMenu import RestaurantMenu
 
 """
-In this folder we generate the menu and test if it was succesfull
+Tests the menu and checks if its successfully generated
 """
 
 

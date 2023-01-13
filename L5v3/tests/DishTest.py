@@ -1,8 +1,8 @@
-from models.CookedDish import CookedDish
-from repository.CookedDishRepo import CookedDishRepo
+from L5v3.models.CookedDish import CookedDish
+from L5v3.repository.CookedDishRepo import CookedDishRepo
 
 """
-Here we test the functionalities of the DishRepo class
+Tests the functionality of the DishRepo class
 """
 
 

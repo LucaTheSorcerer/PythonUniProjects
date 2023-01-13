@@ -1,7 +1,7 @@
 from functools import reduce
 
-from models.Customer import Customer
-from repository.DataRepo import DataRepo
+from L5v3.models.Customer import Customer
+from L5v3.repository.DataRepo import DataRepo
 
 
 class CustomerRepo(DataRepo):
@@ -18,8 +18,8 @@ class CustomerRepo(DataRepo):
 
     def convert_from_string(self, string):
         """
-        :param string: The representation of a list of customers as a string
-        :return: The string in the form of a list
+        :param string: a list of customers as a string
+        :return: The string converted in the form of a list
         """
 
         if string == "":
@@ -40,7 +40,6 @@ class CustomerRepo(DataRepo):
     def search(self, name=None, address=None):
         """
         This function should only be used for testing purposes
-        It is deprecated
         """
         customers = self.load()
         result = None
@@ -55,7 +54,6 @@ class CustomerRepo(DataRepo):
     def update(self, customer, name=None, address=None):
         """
         This function should only be used for testing purposes
-        It is deprecated
         """
         customers = self.load()
         index = customers.index(customer)

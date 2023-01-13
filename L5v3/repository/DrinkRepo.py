@@ -1,7 +1,7 @@
 from functools import reduce
 
-from models.Drink import Drink
-from repository.DataRepo import DataRepo
+from L5v3.models.Drink import Drink
+from L5v3.repository.DataRepo import DataRepo
 
 
 class DrinkRepo(DataRepo):
@@ -10,16 +10,16 @@ class DrinkRepo(DataRepo):
 
     def convert_to_string(self, drinks):
         """
-        :param drinks: A list of type Drinks
-        :return: The list as a string
+        :param drinks: list of type Drinks
+        :return: list as a string
         """
         str_list = map(lambda item: f"{item.id},{item.name},{item.portion_size},{item.price},{item.alcohol}", drinks)
         return reduce(lambda s1, s2: s1 + '\n' + s2, str_list)
 
     def convert_from_string(self, string):
         """
-        :param string: The representation of a list of drinks as a string
-        :return: The string in the form of a list
+        :param string: list of drinks as a string
+        :return: string converted in the form of a list
         """
         if string == "":
             return []

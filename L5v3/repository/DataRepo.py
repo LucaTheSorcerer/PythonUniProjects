@@ -5,14 +5,9 @@ class DataRepo:
     def add(self, obj):
         """
         This function should only be used for testing purposes
-        It is deprecated
-
         :param obj: The objected to be added
 
         This function is used to append a new item to the specific database
-
-        This function might be useless by the time this code is finished as i am still
-        unsure how the Database will be accessed and interacted with
         """
         obj_list = self.load()
         obj_list.append(obj)
@@ -27,7 +22,7 @@ class DataRepo:
 
     def load(self):
         """
-        :return: The items from the specific repository as a list to be used in other operations
+        :return: The items from the specific repository as a list
         """
         return self.convert_from_string(self.read_file())
 
@@ -51,12 +46,12 @@ class DataRepo:
 
     def convert_to_string(self, obj_list):
         """
-        This is an abstract function that should be overwritten in the child class
+        This function is just defined here
         """
         pass
 
     def convert_from_string(self, string):
         """
-        This is an abstract function that should be overwritten in the child class
+        This function is just defined here
         """
         pass

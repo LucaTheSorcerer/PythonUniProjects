@@ -1,8 +1,8 @@
-from models.Customer import Customer
-from repository.CustomerRepo import CustomerRepo
+from L5v3.models.Customer import Customer
+from L5v3.repository.CustomerRepo import CustomerRepo
 
 """
-Here we test searching for a customer by name or address and changing the name of a customer
+Tests the search for a customer by its name or address and tests the changeability of its name or address
 Thus here we test the functionalities of the CustomerRepo class
 """
 

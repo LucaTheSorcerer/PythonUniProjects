@@ -1,29 +1,28 @@
-from controller.CustomerController import add_new_customer, search_customer, update_customer, remove_customer
-from controller.DishController import remove_dish, update_dish, add_new_dish
-from controller.DrinkController import remove_drink, update_drink, add_new_drink
-from controller.OrderController import add_order
-from models.CookedDish import CookedDish
-from models.Drink import Drink
-from repository.CookedDishRepo import CookedDishRepo
-from repository.CustomerRepo import CustomerRepo
-from repository.DrinkRepo import DrinkRepo
-from repository.OrderRepo import OrderRepo
-from ui.CustommerControllerUI import add_new_customer_input
-from ui.RestaurantMenu import RestaurantMenu
-from ui.UserMenu import print_starting_menu
+from L5v3.controller.CustomerController import add_new_customer, search_customer, update_customer, remove_customer
+from L5v3.controller.DishController import remove_dish, update_dish, add_new_dish
+from L5v3.controller.DrinkController import remove_drink, update_drink, add_new_drink
+from L5v3.controller.OrderController import add_order
+from L5v3.models.CookedDish import CookedDish
+from L5v3.models.Drink import Drink
+from L5v3.repository.CookedDishRepo import CookedDishRepo
+from L5v3.repository.CustomerRepo import CustomerRepo
+from L5v3.repository.DrinkRepo import DrinkRepo
+from L5v3.repository.OrderRepo import OrderRepo
+from L5v3.ui.CustommerControllerUI import add_new_customer_input
+from L5v3.ui.RestaurantMenu import RestaurantMenu
+from L5v3.ui.UserMenu import print_starting_menu
 
 
 def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkRepo: DrinkRepo, orderRepo: OrderRepo):
     """
-    This is the central loop of the programme
+    central loop of the programme
+    when this function stops, the whole program stops
     From here the user chooses what he wishes to do
-    :param customerRepo: An instance of CustomerRepo with the appropriate filepath
-    :param cookedDishRepo: An instance of CookedDishRepo with the appropriate filepath
-    :param drinkRepo: An instance of DrinkRepo with the appropriate filepath
-    :param orderRepo: An instance of OrderRepo with the appropriate filepath
-    The paths are given at the entrypoint of the programme, app.py
-
-    When this function ends, the programme ends
+    :param customerRepo: CustomerRepo with its filepath
+    :param cookedDishRepo: CookedDishRepo with its filepath
+    :param drinkRepo: DrinkRepo with its filepath
+    :param orderRepo: OrderRepo with its filepath
+    Their paths are given in app.py
     """
     while True:
         customers = customerRepo.load()
@@ -35,7 +34,7 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
 
         print_starting_menu()
 
-        option = int(input("Your option: ").strip())
+        option = int(input("Enter your desired option from the list: ").strip())
         print("\n")
 
         if option == 1:
@@ -47,13 +46,11 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
         elif option == 3:
             print("Specify the details of the dish you want to add")
             try:
-                """
-                I know this is stupid but i am tired
-                """
-                name = input("Enter a new name ").strip()
-                portion_size = int(input("Enter a new portion size ").strip())
-                price = int(input("Enter a new price ").strip())
-                prep_time = int(input("Enter a new prep time ").strip())
+
+                name = input("Enter a new name for your cooked dish: ").strip()
+                portion_size = int(input("Enter a new value for the portion size of your cooked dish: ").strip())
+                price = int(input("Enter a new value for the price of your cooked dish: ").strip())
+                prep_time = int(input("Enter a new value for the preparation time of your cooked dish: ").strip())
 
                 new_dish = CookedDish(name=name, portion_size=portion_size, price=price, prep_time=prep_time)
 
@@ -71,13 +68,11 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
         elif option == 6:
             print("Specify the details of the drink you want to add")
             try:
-                """
-                I know this is stupid but i am tired
-                """
-                name = input("Enter a new name ").strip()
-                portion_size = int(input("Enter a new portion size ").strip())
-                price = int(input("Enter a new price ").strip())
-                alcohol = int(input("Enter a new alcohol content ").strip())
+
+                name = input("Enter a new name for your drink: ").strip()
+                portion_size = int(input("Enter a new value for the portion size of your drink: ").strip())
+                price = int(input("Enter a new value for the price of your drink: ").strip())
+                alcohol = int(input("Enter a new value for the alcohol content of your drink: ").strip())
 
                 new_drink = Drink(name=name, portion_size=portion_size, price=price, alcohol=alcohol)
             except:
@@ -96,14 +91,14 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
             customers = add_new_customer(customers, customer)
 
         elif option == 10:
-            print("Search for the customer you want to update" + "\n")
+            print("Search for your desired customer that you want to update" + "\n")
             customer = search_customer(customers)
 
             if customer is None:
                 continue
 
-            name = input("Enter a new name: ").strip()
-            address = input("Enter a new address: ").strip()
+            name = input("Enter a new name for your customer: ").strip()
+            address = input("Enter a new address for your customer: ").strip()
 
             if name == "":
                 name = None
@@ -114,7 +109,7 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
             update_customer(customers, customer, name, address)
 
         elif option == 11:
-            print("Search for the customer you want to remove" + "\n")
+            print("Search for your desired customer that you want to remove" + "\n")
             customer = search_customer(customers)
 
             if customer is None:

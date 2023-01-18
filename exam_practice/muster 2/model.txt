@@ -1,0 +1,23 @@
+# Clasificarea: 
+#1.a 3 puncte #1.b 1 punct 
+# 2.a 2 puncte #2.b 2 puncte 
+#3.1 punct # Total: 9 puncte 
+
+1. 
+	a. Se da un fișier text numit "text.txt" care conține pe fiecare linie numele elevului, subiectul și conține nota separată printr-o virgulă ",". Scrieți o funcție numită "ub1" care:
+		- primeste un parametru numit "subiect" 
+		- citește "text.txt" din fișierul CSV specificat 
+		- pastreaza doar randurile a caror materie se potriveste cu parametrul "subiect" (0.5p)  
+		- calculează media tuturor notelor și returnează rezultatul (0,5p)  
+		Nu sunt permise for loops. Soluția este de așteptat să mapeze, să filtreze sau să reducă și se utilizează alte operații matematice, dacă este necesar. (2p) # 
+
+	b. Scrieți două cazuri de testare pentru funcția ub1. (1p): Unul care confirmă rezultatul așteptat al funcției și altul care eșuează intenționat. 
+
+2. 
+	a. Scrieți definiția pentru o clasă numită "BankAccount". Clasa ar trebui să poată face următoarele: 
+	 	- în timpul inițializării, variabila instanțiata "suma" sa fie 	 setata la 0 și variabila de instanță "proprietar" la  unparametru dat (0.5p) 
+	 	- o metodă numită "retrage", care: 
+	 	- primește un singur parametru întreg # 
+	 	- verifică dacă parametrul este mai mare sau egal cu variabila "sumă" (0,5pp) # 
+	 	- returnează diferența dintre sumă și parametrul dat (0,5p) # - aruncă o excepție personalizată numită "NoMoney" dacă parametrul este mai mare decât "sumă" (0,5p)
+

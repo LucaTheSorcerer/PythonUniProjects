@@ -4,11 +4,13 @@ from functools import reduce
 def read_file():
     # Read the contents of the file
     with(open("my_file.txt") as f):
-        content = f.read()
+        content = f.readlines()
 
         # Use repeated splits on the content of the file to transform the string in to a matrix of strings
-        content = content.split("\n")
-        return list(map(lambda x: x.split("   "), content))
+        #content = content.split("\n")
+        content = list(map(lambda x : x.strip("\n").split("   "), content))
+        return content
+        #return list(map(lambda x: x.split("   "), content))
 
 
 # print(read_file())

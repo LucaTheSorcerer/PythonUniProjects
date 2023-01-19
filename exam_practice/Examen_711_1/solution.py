@@ -18,7 +18,8 @@ def ub1():
         data = f.readlines()
 
 
-    lines = list(map(lambda line: line.split(" "),map(lambda line: line.strip(), data)))
+    #lines = list(map(lambda line: line.split(" "),map(lambda line: line.strip(), data)))
+    lines = list(map(lambda line: line.strip("\n").split(" "), data))
 
     desired_lines = list(filter(lambda note : int(note[-1]) >= 8, lines))
 

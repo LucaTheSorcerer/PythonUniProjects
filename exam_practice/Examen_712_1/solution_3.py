@@ -11,9 +11,11 @@ def recursive(lst):
     n = len(lst)
     if len(lst) == 1:
         return lst[0]
-    return (lst[0] + (n - 1) * recursive(lst[1:])) / n
+    else:
+        n = len(lst)
+        return (lst[0] + (n-1) * recursive(lst[1:])) / n
+
 def main():
-    lst = [1, 1, 2]
-    print(my_func(lst))
-    print(recursive(lst))
+    print(my_func([1, 2, 2]))
+    print(recursive([1, 2, 2]))
 main()

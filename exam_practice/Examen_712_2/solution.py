@@ -33,7 +33,7 @@ def ub1(uppercase = False):
         content = list(filter(lambda name : name[1][0].isupper(), content))
 
     else:
-        content = list(filter(lambda name: not name[1][0].isupper(), content))
+        content = list(filter(lambda name: not name[1][0].islower(), content))
 
     subjects = list(map(lambda subject: subject[-2], content))
 

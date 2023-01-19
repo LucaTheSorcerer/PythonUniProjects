@@ -20,48 +20,42 @@ from functools import reduce
 # Einer, der das erwartete Ergebnis der Funktion bestätigt und ein anderer, der absichtlich fehlschlägt.
 
 
-def read_from_file():
+def ub1(greatest = False):
     with open("zahlen.txt") as f:
         content = f.readlines()
+        lines = list(map(lambda line: line.strip("\n").split("\t"), content))
 
-    lines = list(map(lambda lines : lines.strip("\n").split("\t"), content))
+        numbers = list(map(lambda line: list(map(lambda string: int(string), line)), lines))
 
-    numbers = list(map(lambda line: list(map(lambda string: int(string), line)), lines))
+        print(numbers)
 
-    return numbers
+        #generate list of maximum and a list of minimum of the numbers from each list
+        if greatest:
+            max_list = list(map(lambda numbers_list: reduce(lambda number1, number2: max(number1, number2), numbers_list), numbers))
+            print(max_list)
+            product = reduce(lambda number1, number2: number1 * number2, max_list)
+            print(product)
+        else:
+            min_list = list(map(lambda numbers_list: reduce(lambda number1, number2: min(number1, number2), numbers_list), numbers))
+            print(min_list)
+            product = reduce(lambda number1, number2: number1 * number2, min_list)
 
-print(read_from_file())
-def ub1(greatest = True):
-
-    content = read_from_file()
-
-    if greatest:
-        #generates the maximum number from each list and stores it into a list
-        max_list = list(map(lambda numbers_list: reduce(lambda a, b: max(a, b), numbers_list), content))
-
-        product = reduce(lambda number1, number2: number1 * number2, max_list)
-
-    else:
-        #generates the minimum number from each list and stores it into a list
-        min_list = list(map(lambda numbers_list: reduce(lambda number1, number2: min(number1, number2), numbers_list), content))
-        product = reduce(lambda number1, number2: number1 * number2, min_list)
-
-    return product
-
+        return product
 
 def correct_test():
-    assert ub1() == 25 * 29 * 27 * 26 * 15 * 23
+    assert ub1(True) == 175587750
 
 def incorrect_test():
     try:
-        assert ub1() == 1 * 3
+        assert ub1() == 2
     except AssertionError:
-        print("Not working!")
+        print("Incorrect")
 
-def tests():
+def test():
     correct_test()
     incorrect_test()
-tests()
+test()
+
 def main():
-    print(ub1())
+    print(ub1(True))
 main()

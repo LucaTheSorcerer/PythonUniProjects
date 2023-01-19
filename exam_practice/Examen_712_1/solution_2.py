@@ -17,23 +17,22 @@ Aufgabe 2
 # Ergebnis der Addition zwischen einer Instanz des Typs "ActualDecryptedText" und einer Zahl (instanz + 3) ist eine
 # neue Instanz des Typs "ActualDecryptedText", die die Elemente aus "numbers" um die Zahl (aus der Addition) erhöht.
 # (1p)
+
 class UnacceptedValue(Exception):
     pass
 
 class DecryptedText:
-    def __init__(self, characters : list[str]):
+    def __init__(self, characters: list[str]):
         self.characters = characters
 
     def encrypt(self):
         ascii_list = []
-        for charachter in self.characters:
-            if not charachter.islower():
-                raise UnacceptedValue("Not in interval a-z")
+        for character in self.characters:
+            if not character.islower():
+                raise UnacceptedValue
             else:
-                ascii_list.append(ord(charachter))
-
+                ascii_list.append(ord(character))
         return ascii_list
-
 
 class ActualDecryptedText(DecryptedText):
     def __init__(self, characters):
@@ -45,12 +44,9 @@ class ActualDecryptedText(DecryptedText):
             #super().encrypt()
             self.numbers = super().encrypt()
         except UnacceptedValue:
-            #print("wtf")
             self.numbers = []
 
-        return self.numbers
-
-    def __add__(self, other: int):
+    def __add__(self, other):
         new_instance = ActualDecryptedText(self.characters)
         new_instance.encrypt()
 
@@ -59,17 +55,11 @@ class ActualDecryptedText(DecryptedText):
 
         return new_instance
 
-
-
-
-
 def main():
     d = DecryptedText(['a', 'b', 'c'])
     print(d.encrypt())
 
     c1 = ActualDecryptedText(['a', 'b', 'c'])
-    print(c1.encrypt())
-
-    c3 = c1 + 3
-    print(c3.numbers)
+    c2 = c1 + 3
+    print(c2.numbers)
 main()

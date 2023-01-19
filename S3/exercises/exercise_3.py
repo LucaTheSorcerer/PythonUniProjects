@@ -24,3 +24,16 @@ def change_vocals(string1):
     return new_string
 
 print(change_vocals(word))
+
+"""
+add list of numbers after encryption of an instance
+
+    def __add__(self, other: int):
+        new_instance = ActualDecryptedText(self.characters)
+        new_instance.encrypt()
+
+        for i in range(len(new_instance.numbers)):
+            new_instance.numbers[i] += other
+
+        return new_instance
+"""

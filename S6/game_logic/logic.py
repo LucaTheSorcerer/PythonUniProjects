@@ -37,3 +37,11 @@ while True:
             secretWord = get_random_word_for_hangman(wordList)
         else:
             break
+
+"""
+#with open("zahlen.txt") as f:
+ #       content = f.readlines()
+        lines = list(map(lambda line: line.strip("\n").split("\t"), content))
+
+        numbers = list(map(lambda line: list(map(lambda string: int(string), line)), lines))
+"""

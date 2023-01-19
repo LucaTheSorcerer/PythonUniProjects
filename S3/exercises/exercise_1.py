@@ -15,4 +15,12 @@ def check_sum_equal_number(number, list1):
 print(check_sum_equal_number(number, list1))
 
 
+#Notes bigger than 8 and takes the notes
+lines = list(map(lambda line: line.strip("\n").split(" "), data))
+
+desired_lines = list(filter(lambda note: int(note[-1]) >= 8, lines))
+
+notes = list(map(lambda note: int(note[-1]), desired_lines))
+
+
 
